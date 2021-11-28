@@ -10,7 +10,6 @@ from django.core.exceptions import ValidationError
 from .models import User
 from .models import Note
 from .models import Tag
-from .models import Profile
 from .models import UserManager
 
 class UserCreationForm(forms.ModelForm):
@@ -76,4 +75,5 @@ admin.site.register(User, UserAdmin)
 
 admin.site.register(Tag)
 admin.site.register(Note)
-admin.site.register(Profile)
+
+admin.site.unregister(Group)

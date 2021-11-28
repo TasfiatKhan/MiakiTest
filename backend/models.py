@@ -57,7 +57,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     def __str__(self):
-        return self.email
+        return self.username
 
     def has_perm(self, perm, obj=None):
         return self.is_admin
@@ -89,13 +89,4 @@ class Note(models.Model):
     updated = models.DateTimeField(auto_now=True)
     
     def __str__(self):
-        return self.tag
-
-
-
-class Profile(models.Model):
-
-    profile_user = models.OneToOneField(User, on_delete=models.CASCADE)
-    
-    def __str__(self):
-        return self.profile_user.email
+        return self.body[0:35]
