@@ -71,6 +71,8 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL = 'backend.User'
+
 WSGI_APPLICATION = 'miakinoteplus.wsgi.application'
 
 
